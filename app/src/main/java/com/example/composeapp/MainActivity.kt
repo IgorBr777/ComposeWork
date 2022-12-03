@@ -43,13 +43,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Text(
-        text = "ANDROID DEVELOPER")
+        text = "ANDROID DEVELOPER"
+    )
 }
 
 @Composable
-fun SetImage(){
+fun SetImage() {
     Image(
-        painter = painterResource(id = R.drawable.ic_launcher_background) ,
+        painter = painterResource(id = R.drawable.ic_launcher_background),
         contentDescription = "",
         modifier = Modifier.requiredSize(50.dp)
     )
@@ -76,7 +77,7 @@ fun SetImage(){
 //}
 
 @Composable
-fun SetRow(){
+fun SetRow() {
     Row {
         Text(text = "text")
         Image(
@@ -88,15 +89,15 @@ fun SetRow(){
 }
 
 @Composable
-fun SetColumn(){
-    var remembered by remember{mutableStateOf("") }
-    var remembered2 by remember{mutableStateOf("") }
+fun SetColumn() {
+    var remembered by remember { mutableStateOf("") }
+    var remembered2 by remember { mutableStateOf("") }
 
 
 
     Column(
         modifier = Modifier.padding(PaddingValues(top = 200.dp)),
-            horizontalAlignment = CenterHorizontally
+        horizontalAlignment = CenterHorizontally
 
 
     ) {
@@ -119,26 +120,25 @@ fun SetColumn(){
             }
         )
 
-            val context = LocalContext.current
-            Button(
-                onClick = {
-                    Toast.makeText(context, "$remembered $remembered2", Toast.LENGTH_SHORT).show()
-                    context.startActivity(Intent(context, MainActivity::class.java))
+        val context = LocalContext.current
+        Button(
+            onClick = {
+                Toast.makeText(context, "$remembered $remembered2", Toast.LENGTH_SHORT).show()
+                context.startActivity(Intent(context, MainActivity::class.java))
 
 
-                },
-                modifier = Modifier.wrapContentHeight()
-                    .wrapContentWidth()
-                    .padding(PaddingValues(top = 50.dp))
-                    .align(alignment = CenterHorizontally)
-            ) {
-                Text(
-                    text = "button text",
-                    color = colorResource(id = R.color.teal_200),
-                )
-            }
-
-
+            },
+            modifier = Modifier
+                .wrapContentHeight()
+                .wrapContentWidth()
+                .padding(PaddingValues(top = 50.dp))
+                .align(alignment = CenterHorizontally)
+        ) {
+            Text(
+                text = "button text",
+                color = colorResource(id = R.color.teal_200),
+            )
+        }
 
 
     }
